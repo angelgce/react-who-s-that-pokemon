@@ -3,7 +3,11 @@ import { FetchAPI } from "../helpers/FetchAPI";
 
 export const useFetchPokemon = (value: number) => {
 
-    const [pokemons, setPokemons] = useState({})
+    const [pokemons, setPokemons] = useState<{ id: number, name: string, image: string } | {}>({
+        id: 0,
+        name: '',
+        image: ''
+    })
     const [isLoadiong, setisLoadiong] = useState(true)
 
     const getPokemons = async () => {

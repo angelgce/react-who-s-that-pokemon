@@ -5,11 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useAudio } from 'react-use';
 import { Life } from './Life';
 
-export const Pokedex = ({ pokeList, correct, onCount }: { pokeList: [], correct: number }) => {
+export const Pokedex = ({ pokeList, correct, onCount }: { pokeList: number[], correct: number, onCount: () => void }) => {
     const [count, setcount] = useState(0);
     const [lifes, setlifes] = useState(3)
     const [src, setsrc] = useState('https://play.pokemonshowdown.com/audio/cries/arceus.mp3')
-    const [list, setlist] = useState([])
+    const [list, setlist] = useState<number[]>([])
     const [isCorrect, setisCorrect] = useState(false)
     const [audio, state, controls, ref] = useAudio({
         src: src,
@@ -143,7 +143,7 @@ export const Pokedex = ({ pokeList, correct, onCount }: { pokeList: [], correct:
                     </div>
                     <div className='flex justify-center '>
                         {
-                            pokemons.map(poke => poke.id > 0 &&
+                            pokemons.map(poke =>
                                 <button key={poke.id} onClick={onValidation} name={poke.name} className="drop-shadow-sm mx-2 uppercase bg-blue-500 hover:bg-blue-700 text-white font-bold py-5 px-10 rounded" > {poke.name}</button>
 
                             )

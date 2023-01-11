@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Life } from "./components/Life";
 import { Pokedex } from "./components/Pokedex"
 
 
@@ -36,7 +35,6 @@ function App() {
 
   return (
     <div className="w-screen h-screen border-4 border-dark bg-gradient-to-r from-blue-300 ... bg-opacity-10" >
-      
       <Pokedex pokeList={pokeList} correct={correct} onCount={onCount} />
     </div>
 

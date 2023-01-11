@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 
 export const Life = ({ lifes, count }: { lifes: number, count: number }) => {
-    const [List, setList] = useState([])
-   
+    const [List, setList] = useState<number[]>([])
+
     const modifyList = () => {
-        let newList = []
+        let newList: number[] = []
         setList([])
         for (let index = 0; index < 3; index++) {
             if (lifes > index) {
@@ -17,8 +17,8 @@ export const Life = ({ lifes, count }: { lifes: number, count: number }) => {
         console.log(List)
     }
 
-    
-   
+
+
 
 
     useEffect(() => {
